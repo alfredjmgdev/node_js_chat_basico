@@ -16,9 +16,9 @@ class Usuarios {
 
     }
 
-    getpersona( id ) {
+    getPersona( id ) {
 
-        let persona = this.personas.filter( persona => persona.id = id)[0];
+        let persona = this.personas.filter( persona => persona.id === id)[0];
 
         return persona;        
 
@@ -33,10 +33,12 @@ class Usuarios {
     }
 
     borrarPersona(id){
+
+        let personaBorrada = this.getPersona(id);
          
-        this.personas.filter(persona => {
-            return persona.id !=!
-        });
+        this.personas = this.personas.filter(persona => persona.id != id);
+
+        return personaBorrada;
 
     }
 
